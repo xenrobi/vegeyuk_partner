@@ -1,0 +1,2 @@
+# vegeyuk_partner
+ VEGETARIAN FOOD ORDERING APLICATION

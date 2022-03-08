@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_order"
+            android:title="Pesanan Baru" />
+        <item
+            android:id="@+id/nav_riwayat"
+            android:icon="@drawable/ic_history"
+        android:title="Riwayat Delivery" />
+        <item
+            android:id="@+id/nav_laporan"
+            android:icon="@drawable/ic_account"
+            android:title="Laporan Saya" />
+
+    </group>
+
+    <item android:title="kontrol">
+        <menu>
+            <item
+                android:id="@+id/nav_keluar"
+                android:icon="@drawable/ic_logout"
+                android:title="Keluar" />
+        </menu>
+    </item>
+
+</menu>

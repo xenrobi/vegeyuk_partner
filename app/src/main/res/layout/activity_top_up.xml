@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rect"
+        android:layout_margin="16dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+
+            <TextView
+                android:layout_weight="1"
+                android:textSize="@dimen/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maksimum Transfer"
+                android:gravity="left"
+                android:textColor="@color/textSub"
+                android:background="#0000"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/tvMaxTransfer"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rp."
+                android:textColor="@color/Tex"
+                android:background="#0000"
+
+                android:gravity="left"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@color/colordevider"/>
+
+        <!--****** total********-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nominal yang akan ditransfer"
+                android:textColor="@color/textSub"
+                android:textSize="@dimen/text"/>
+
+            <EditText
+                android:id="@+id/etNominal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:inputType="number"
+                android:hint="Nominal Transfer"/>
+
+
+
+            <EditText
+                android:id="@+id/etNominal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ulangi Jumlah Transfer"
+                android:inputType="number"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTransfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transfer"
+        android:textColor="@color/White"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="16dp"/>
+
+
+
+</LinearLayout>

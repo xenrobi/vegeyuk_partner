@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vegeyuk.restopatner">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcer"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcer"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.resto.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.SplashActivity"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.NoAll">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.SignInActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.resto.SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.VerifyActifity"
+            android:theme="@style/AppTheme.NoAll" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.DetailOrderActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.AddMenuActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.DataKurirActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.kurir.OrderFragment" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.DeliveryActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.TopUpActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <service android:name="com.example.vegeyuk.restopatner.utils.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.example.vegeyuk.restopatner.utils.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.resto.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.EditMenuActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.EditDeliveryActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.EditPemilikActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.EditRestoranActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.resto.DetailRiwayatActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.TesFirebaseActivity" />
+        <activity android:name="com.example.vegeyuk.restopatner.activities.ListDeliveryActivity" />
+        <activity
+            android:name="com.example.vegeyuk.restopatner.activities.kurir.KurirMainActivity"
+            android:label="@string/title_activity_kurir_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name="com.example.vegeyuk.restopatner.activities.PrintActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/title"
+            android:background="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/msg"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:textSize="25sp"
+            android:text="Resto Partner"/>
+
+        <TextView
+            android:id="@+id/msg"
+            android:layout_above="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masukkan Nomor Handphone"
+            android:gravity="center"/>
+
+    <br.com.sapereaude.maskedEditText.MaskedEditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:typeface="monospace"
+        mask:allowed_chars="1234567890"
+        mask:mask="+62-####-###-####"
+        app:keep_hint="true"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:id="@+id/btnSendCode"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="@color/White"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/etPhone"
+        android:theme="@style/ButtonPrimary"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

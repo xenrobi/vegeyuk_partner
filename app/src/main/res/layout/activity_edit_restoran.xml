@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rect"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="100dp"
+                android:padding="16dp">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/tvNamaResto"
+                            android:textSize="18sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Data Restoran"
+                            android:textColor="@color/colorPrimary"
+                            android:background="#0000"
+
+                            android:gravity="center_vertical"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colordevider"/>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/etNama"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:inputType="textPersonName"
+                                android:hint="Nama Restoran"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/etPhone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="phone"
+                                android:maxLines="1"
+                                android:hint="Phone Restoran"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/etEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:inputType="textEmailAddress"
+                                android:hint="Email Restoran"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/etDeskripsi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Deskripsi Restoran"
+                                android:maxLines="3"
+                                android:inputType="text"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spinerPb1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                </Spinner>
+
+
+                <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/etAlamat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Alamat Restoran"
+                                android:maxLines="3" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/btn_edit"
+                    android:layout_below="@id/linear1"
+                    android:textSize="@dimen/text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ubah"
+                    android:textColor="@color/White"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="15dp"
+                    android:gravity="center"
+                    />
+
+
+
+
+        </RelativeLayout>
+
+        </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

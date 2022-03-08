@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="2dp"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/tvIDpesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#65757567"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+
+
+            <TextView
+                android:layout_weight="2"
+                android:maxLines="1"
+                android:id="@+id/tvTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 m"
+                android:gravity="center"
+                android:textColor="@color/Tex"
+                android:textSize="12dp"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNamaPemesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="M. Rifqi Aufa Abdika"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center|left"
+            android:drawableLeft="@drawable/ic_konsumen"
+            android:textSize="15dp"/>
+
+
+
+        <TextView
+            android:id="@+id/tvDaftarPesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resto-Pay -  Rp.5000"
+            android:gravity="center|left"
+            android:maxLines="2"
+            android:textColor="@color/Tex"
+            android:drawableLeft="@drawable/ic_list_order"
+            />
+
+        <TextView
+            android:id="@+id/tvAlamat"
+            android:text="Jl. Soebrantas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:maxLines="3"
+            android:textColor="@color/Tex"
+            android:drawableLeft="@drawable/ic_address"/>
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colordevider"/>
+</RelativeLayout>
