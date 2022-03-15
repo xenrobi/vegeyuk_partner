@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     HashMap<String,String> sessionRstoran;
     ProgressDialog progressDialog;
     private static final String TAG = "MapsActivity";
-
+    SearchView searchView;
     Boolean changeLoaction = false;
 
     @Override
@@ -62,10 +63,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
+
+
         mBtnSetLocation = (Button) findViewById(R.id.btnSetLocation);
         mLocation =(TextView) findViewById(R.id.tvLocation);
-
+        searchView = findViewById(R.id.search_view);
 
 
         location = new LatLng(1.1296365806908568, 104.03463099542692);
@@ -81,6 +85,46 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                String lokasi = searchView.getQuery().toString();
+
+                List<Address> addressList = null;
+
+                Geocoder geocoder = new Geocoder(MapsActivity.this);
+                try {
+                    addressList = geocoder.getFromLocationName(lokasi, 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                assert addressList != null;
+                Address address = addressList.get(0);
+
+                LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+
+                mMap.addMarker(new MarkerOptions().position(latLng).title(lokasi));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newtext) {
+                return false;
+            }
+        });
+
+
+
+
+
+        mapFragment.getMapAsync(this);
+
+
+
+
 
     }
 

@@ -16,12 +16,12 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
+            android:layout_width="184dp"
             android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
             android:layout_above="@+id/textSendCode"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/logo" />
+            android:background="@drawable/vegeyuk_logo" />
 
         <TextView
             android:id="@+id/textSendCode"

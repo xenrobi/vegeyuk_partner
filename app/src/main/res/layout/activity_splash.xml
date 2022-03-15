@@ -9,9 +9,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/logo" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginRight="77dp"
+        android:background="@drawable/vegeyuk_logo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +24,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
         android:textSize="30sp"
-        android:text="Resto Partner"/>
+        android:text="VEGEYUK PARTNER"/>
 
 
     <ProgressBar

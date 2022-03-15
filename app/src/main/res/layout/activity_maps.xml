@@ -12,29 +12,35 @@
         android:layout_height="match_parent"
         tools:context=".activities.resto.MapsActivity" />
 
-    <android.support.v7.widget.SearchView
+    <SearchView
+        android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cardview_dark_background">
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colordevider"
+        android:elevation="5dp" />
 
-    </android.support.v7.widget.SearchView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:padding="5dp"
         android:layout_above="@+id/marker"
-        android:orientation="vertical"
         android:layout_marginHorizontal="16dp"
-        android:background="@drawable/rect">
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rect"
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Set Lokasi Restoran"
-            android:textAllCaps="true"
             android:layout_gravity="center"
-            />
+            android:text="Set Lokasi Restoran"
+            android:textAllCaps="true" />
 
         <TextView
             android:id="@+id/tvLocation"
@@ -42,11 +48,10 @@
             android:layout_height="wrap_content"
             android:maxLines="3"
             android:text="Lokasi Restoran Anda"
-            android:textColor="@color/Tex"
-
-
             android:textAlignment="center"
-            />
+
+
+            android:textColor="@color/Tex" />
 
     </LinearLayout>
 

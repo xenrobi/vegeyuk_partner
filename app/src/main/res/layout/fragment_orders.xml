@@ -24,7 +24,7 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:titleTextColor="#FFFFFF"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:title="Resto Partner"
+            app:title="Vegeyuk Partner"
             >
 
             <LinearLayout
