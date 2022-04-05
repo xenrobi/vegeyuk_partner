@@ -48,12 +48,12 @@
             android:id="@+id/tvNamaPemesan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="M. Rifqi Aufa Abdika"
+            android:drawableLeft="@drawable/ic_konsumen"
+            android:gravity="center|left"
+            android:text="Robi"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
-            android:gravity="center|left"
-            android:drawableLeft="@drawable/ic_konsumen"
-            android:textSize="15dp"/>
+            android:textSize="15dp" />
 
 
 
@@ -70,13 +70,13 @@
 
         <TextView
             android:id="@+id/tvAlamat"
-            android:text="Jl. Soebrantas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_address"
             android:gravity="center|left"
             android:maxLines="3"
-            android:textColor="@color/Tex"
-            android:drawableLeft="@drawable/ic_address"/>
+            android:text="Jl. jalan"
+            android:textColor="@color/Tex" />
 
 
 

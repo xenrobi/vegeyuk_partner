@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -51,6 +54,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final String TAG = "MapsActivity";
     SearchView searchView;
     Boolean changeLoaction = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +89,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-
+        //SEARCHVIEW MAP
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -126,7 +130,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
+
     }
+
+
+
+
+
+
+
+
+
 
     private void getIntenComing() {
 
@@ -168,6 +182,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mLocation.setText(alamat);
             }
         });
+
+
+
     }
 
     public List<Address> getGeocoderAddress(Context context){

@@ -19,9 +19,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_centerHorizontal="true"
             android:layout_above="@+id/title"
-            android:background="@drawable/logo" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/vegeyuk_logo" />
 
         <TextView
             android:id="@+id/title"
@@ -31,7 +31,7 @@
             android:layout_centerVertical="true"
             android:layout_centerInParent="true"
             android:textSize="25sp"
-            android:text="Resto Partner"/>
+            android:text="VEGEYUK PARTNER"/>
 
         <TextView
             android:id="@+id/msg"

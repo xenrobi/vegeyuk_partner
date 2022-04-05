@@ -10,7 +10,7 @@ public class ServerConfig {
     //192.168.1.193
     //https://topapp.id/marketresto/api/v1/
     //private static final String BASE_URL_API = "http://192.168.100.5/marketresto/api/v1/";
-    private static final String BASE_URL_API = "http://192.168.43.54/marketresto/api/v1/";
+    private static final String BASE_URL_API = "https://vegeyuk.com/api/v1/";
     //192.168.0.102
     //192.168.0.104
     //192.168.43.54

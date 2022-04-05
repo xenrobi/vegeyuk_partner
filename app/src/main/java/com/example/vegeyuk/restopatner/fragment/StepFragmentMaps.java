@@ -97,7 +97,13 @@ public class StepFragmentMaps extends Fragment implements BlockingStep {
         });
         return view;
 
+
+
     }
+
+
+
+
 
 
     public Restoran resto (){
@@ -132,6 +138,8 @@ public class StepFragmentMaps extends Fragment implements BlockingStep {
         super.onResume();
         mMapView.onResume();
         Toast.makeText(getActivity(), "onResume", Toast.LENGTH_SHORT).show();
+
+
 
     }
 
@@ -180,4 +188,6 @@ public class StepFragmentMaps extends Fragment implements BlockingStep {
             }
         },0L);
     }
+
+
 }

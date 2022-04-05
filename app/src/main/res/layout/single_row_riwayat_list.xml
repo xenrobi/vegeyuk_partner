@@ -62,10 +62,10 @@
             android:id="@+id/tvNamaPemesan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="M. Rifqi Aufa Abdika"
+            android:text="Robi"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
-            android:textSize="15dp"/>
+            android:textSize="15dp" />
 
 
         <LinearLayout

@@ -6,7 +6,7 @@
     <string name="loss_connect">Gagal Terhubung ke Server</string>
     <string name="memuat">Memuat...</string>
 
-    <string name="urlmenu">http://192.168.43.54/marketresto/public/fotomenu/</string>
+    <string name="urlmenu">https://vegeyuk.com/public/fotomenu/</string>
     <string name="title_activity_maps">Map</string>
     <string name="msg">Mohon terima semua permisi</string>
     <string name="title_activity_kurir_main">KurirMainActivity</string>
