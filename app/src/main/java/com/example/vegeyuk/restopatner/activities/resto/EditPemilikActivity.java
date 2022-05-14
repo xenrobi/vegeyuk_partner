@@ -3,12 +3,12 @@ package com.example.vegeyuk.restopatner.activities.resto;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.widget.EditText;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.example.vegeyuk.restopatner.R;
 import com.example.vegeyuk.restopatner.config.ServerConfig;
@@ -17,6 +17,7 @@ import com.example.vegeyuk.restopatner.responses.ResponseRestoran;
 import com.example.vegeyuk.restopatner.responses.ResponseValue;
 import com.example.vegeyuk.restopatner.rest.ApiService;
 import com.example.vegeyuk.restopatner.utils.SessionManager;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.HashMap;
 

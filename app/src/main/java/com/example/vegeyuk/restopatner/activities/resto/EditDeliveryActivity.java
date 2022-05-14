@@ -3,10 +3,6 @@ package com.example.vegeyuk.restopatner.activities.resto;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -17,12 +13,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import com.example.vegeyuk.restopatner.R;
 import com.example.vegeyuk.restopatner.config.ServerConfig;
 import com.example.vegeyuk.restopatner.models.Restoran;
 import com.example.vegeyuk.restopatner.responses.ResponseValue;
 import com.example.vegeyuk.restopatner.rest.ApiService;
 import com.example.vegeyuk.restopatner.utils.SessionManager;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.NumberFormat;
 import java.util.HashMap;
@@ -35,7 +36,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditDeliveryActivity extends AppCompatActivity{
+public class EditDeliveryActivity extends AppCompatActivity {
 
     Context mContext;
     ApiService mApiService;

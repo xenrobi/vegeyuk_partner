@@ -1,23 +1,27 @@
 package com.example.vegeyuk.restopatner.utils;
 
-import android.support.design.widget.TabLayout;
 import android.util.Log;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
-public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
+public class MyFirebaseInstanceIDService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseIIDService";
 
-    @Override
+   /* @Override
     public void onTokenRefresh() {
         super.onTokenRefresh();
 
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "onTokenRefresh: "+refreshedToken);
         storeToken(refreshedToken);
-    }
+        */
+   @Override
+   public void onNewToken(String s) {
+       super.onNewToken(s);
+       Log.d(TAG, s);
+   }
+
 
     private  void storeToken(String token){
             SharedPrefManager.getInstance(getApplicationContext()).saveDeviceToken(token);

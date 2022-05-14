@@ -8,7 +8,7 @@
     android:orientation="vertical"
     app:behavior_hideable="true"
     app:behavior_peekHeight="80dp"
-    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <LinearLayout
     android:id="@+id/panelInfo"
@@ -30,7 +30,7 @@
             android:id="@+id/tvNamaPemesan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="M. Rifqi Aufa Abdika"
+            android:text="Username"
             android:maxLines="1"
             android:textColor="@color/Tex"
             android:textSize="14sp"/>
@@ -51,7 +51,7 @@
             android:maxLines="3"
             android:lines="2"
             android:textColor="@color/Tex"
-            android:text="Jl. Srikandi Perumahan Wadya Graha 1 "
+            android:text="Alamat User"
             android:textSize="14sp"/>
 
 

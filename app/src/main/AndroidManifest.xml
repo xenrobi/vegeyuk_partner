@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.vegeyuk.restopatner">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -28,6 +29,7 @@
         <activity
             android:name=".activities.SplashActivity"
             android:noHistory="true"
+            android:exported="true"
             android:theme="@style/AppTheme.NoAll">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,7 +52,8 @@
         <activity android:name=".activities.resto.DetailOrderActivity" />
         <activity android:name=".activities.resto.AddMenuActivity" />
         <activity android:name=".activities.resto.DataKurirActivity" />
-        <activity android:name=".activities.kurir.OrderFragment" />
+        <activity android:name=".activities.kurir.OrderFragment"
+            tools:ignore="Instantiatable" />
         <activity android:name=".activities.DeliveryActivity" />
         <activity android:name=".activities.TopUpActivity" />
 
@@ -58,12 +61,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <service android:name=".utils.MyFirebaseInstanceIDService">
+        <service android:name=".utils.MyFirebaseInstanceIDService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".utils.MyFirebaseMessagingService">
+        <service android:name=".utils.MyFirebaseMessagingService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

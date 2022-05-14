@@ -99,7 +99,7 @@
                 android:textSize="@dimen/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Muhammad Aufa"
+                android:text="Usename"
                 android:textColor="@color/colorPrimary"
                 android:background="#0000"
 
@@ -176,7 +176,7 @@
                 android:textSize="@dimen/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jl. Garuda Sakti KM 10"
+                android:text="Alamat User"
                 android:textColor="@color/Tex"
                 android:background="#0000"
 

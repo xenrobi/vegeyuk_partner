@@ -2,8 +2,9 @@ package com.example.vegeyuk.restopatner.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.vegeyuk.restopatner.fragment.StepFragmentDelivery;
 import com.example.vegeyuk.restopatner.fragment.StepFragmentKategori;

@@ -3,10 +3,6 @@ package com.example.vegeyuk.restopatner.activities.resto;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -14,7 +10,9 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.ebanx.swipebtn.OnStateChangeListener;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.ebanx.swipebtn.SwipeButton;
 import com.example.vegeyuk.restopatner.R;
 import com.example.vegeyuk.restopatner.adapter.DetailOrderAdapter;
@@ -33,7 +31,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DetailRiwayatActivity extends AppCompatActivity{
+public class DetailRiwayatActivity extends AppCompatActivity {
 
     private List<Menu> detailOrders = new ArrayList<>();
     private DetailOrderAdapter orderAdapter;

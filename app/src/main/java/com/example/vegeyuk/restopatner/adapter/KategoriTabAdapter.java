@@ -1,10 +1,11 @@
 package com.example.vegeyuk.restopatner.adapter;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.vegeyuk.restopatner.fragment.MenuListFragment;
 import com.example.vegeyuk.restopatner.models.Kategori;
@@ -19,7 +20,7 @@ public class KategoriTabAdapter extends FragmentStatePagerAdapter {
     private List<Menu> menuList = new ArrayList<>();
     private List<Kategori> kategoriList = new ArrayList<>();
 
-    public KategoriTabAdapter(FragmentManager fm,int NumOfTabs, List<Menu> menuList,List <Kategori> kategoriList) {
+    public KategoriTabAdapter(FragmentManager fm, int NumOfTabs, List<Menu> menuList, List <Kategori> kategoriList) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
         this.menuList = menuList;

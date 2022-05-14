@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -41,17 +41,16 @@
             android:text="Masukkan Nomor Handphone"
             android:gravity="center"/>
 
-    <br.com.sapereaude.maskedEditText.MaskedEditText
-        android:id="@+id/etPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:typeface="monospace"
-        mask:allowed_chars="1234567890"
-        mask:mask="+62-####-###-####"
-        app:keep_hint="true"
-        android:layout_centerInParent="true"
-        />
+        <br.com.sapereaude.maskedEditText.MaskedEditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:inputType="phone"
+            android:typeface="monospace"
+            app:keep_hint="true"
+            mask:allowed_chars="1234567890"
+            mask:mask="+62-####-###-####" />
 
     <Button
         android:id="@+id/btnSendCode"
@@ -66,4 +65,4 @@
 
     </RelativeLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

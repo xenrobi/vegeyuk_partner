@@ -13,14 +13,6 @@ import android.location.LocationProvider;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +21,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.vegeyuk.restopatner.R;
 import com.example.vegeyuk.restopatner.activities.kurir.KurirMainActivity;
@@ -52,6 +51,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -543,7 +544,7 @@ public class DeliveryActivity extends AppCompatActivity implements OnMapReadyCal
 //            }
 //        });
 
-        mApiService.changeMetodeBayar(id_order,"cash").enqueue(new Callback<ResponseValue>() {
+        mApiService.changeMetodeBayar(id_order,"ambil").enqueue(new Callback<ResponseValue>() {
             @Override
             public void onResponse(Call<ResponseValue> call, Response<ResponseValue> response) {
                 if (response.isSuccessful()){

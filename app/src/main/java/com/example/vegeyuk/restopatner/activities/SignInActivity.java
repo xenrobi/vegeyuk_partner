@@ -4,13 +4,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.example.vegeyuk.restopatner.R;
 import com.example.vegeyuk.restopatner.config.ServerConfig;
@@ -19,6 +19,7 @@ import com.example.vegeyuk.restopatner.models.Restoran;
 import com.example.vegeyuk.restopatner.responses.ResponseAuth;
 import com.example.vegeyuk.restopatner.rest.ApiService;
 import com.example.vegeyuk.restopatner.utils.SharedPrefManager;
+import com.google.android.material.snackbar.Snackbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
