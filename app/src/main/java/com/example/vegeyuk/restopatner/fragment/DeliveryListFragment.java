@@ -113,7 +113,7 @@ public class DeliveryListFragment extends Fragment {
         ArrayList<String> status = new ArrayList<String>();
         status.add("pengantaran");
 
-        mApiService.getOrder(id_restoran,status).enqueue(new Callback<ResponseOrder>() {
+        mApiService.getOrder(id_restoran,status, null, null).enqueue(new Callback<ResponseOrder>() {
             @Override
             public void onResponse(Call<ResponseOrder> call, Response<ResponseOrder> response) {
 

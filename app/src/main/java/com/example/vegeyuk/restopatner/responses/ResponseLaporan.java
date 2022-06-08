@@ -29,6 +29,10 @@ public class ResponseLaporan {
     @Expose
     private List<Menu> menu = null;
 
+    @SerializedName("totalPenghasilan")
+    @Expose
+    private String totalPenghasilan;
+
     public Integer getJumlahOrder() {
         return jumlahOrder;
     }
@@ -83,6 +87,14 @@ public class ResponseLaporan {
 
     public void setMenu(List<Menu> menu) {
         this.menu = menu;
+    }
+
+    public String getTotalPenghasilan() {
+        return totalPenghasilan;
+    }
+
+    public void setTotalPenghasilan(String totalPenghasilan) {
+        this.totalPenghasilan = totalPenghasilan;
     }
 
 }

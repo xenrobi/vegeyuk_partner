@@ -47,9 +47,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:maxLines="2"
-                android:text="Jl. Soebrantas No.40 Pekanbaru"
-                android:textColor="@color/Tex"
-                 />
+                android:text="Alamat"
+                android:textColor="@color/Tex" />
 
             <TextView
                 android:id="@+id/noHp"
@@ -57,9 +56,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:maxLines="1"
-                android:text="Hp 081268475430"
-                android:textColor="@color/Tex"
-                 />
+                android:text="Hp 081122334455"
+                android:textColor="@color/Tex" />
 
             <TextView
                 android:id="@+id/tvNoOrder"
@@ -69,8 +67,7 @@
                 android:gravity="left"
                 android:maxLines="1"
                 android:text="No Order :  43232"
-                android:textColor="@color/Tex"
-                />
+                android:textColor="@color/Tex" />
 
             <TextView
                 android:id="@+id/tvNamaPemesan"
@@ -78,9 +75,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:maxLines="1"
-                android:text="Cost. Nama : Muhammad Rifqi Aufa Abdika"
-                android:textColor="@color/Tex"
-                 />
+                android:text="Cost. Nama : User"
+                android:textColor="@color/Tex" />
 
             <TextView
                 android:id="@+id/tvMetodeBayar"
@@ -88,9 +84,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:maxLines="1"
-                android:text="Metode Bayar : Cash"
-                android:textColor="@color/Tex"
-                 />
+                android:text="Metode Pengantanran : Antar/Ambil Sendiri"
+                android:textColor="@color/Tex" />
 
 
             <View
@@ -101,11 +96,11 @@
 
 
             <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Daftar Pesanan"-->
-                <!--android:textColor="@color/textSub"-->
-                <!--android:textSize="12sp" />-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Daftar Pesanan"-->
+            <!--android:textColor="@color/textSub"-->
+            <!--android:textSize="12sp" />-->
 
             <com.example.vegeyuk.restopatner.utils.NonScrollListView
                 android:id="@+id/listview"
@@ -129,8 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Subtotal"
-                    android:textColor="@color/Tex"
-                     />
+                    android:textColor="@color/Tex" />
 
                 <TextView
                     android:id="@+id/tvSubTotal"
@@ -140,8 +134,7 @@
                     android:gravity="right"
                     android:maxLines="1"
                     android:text="Rp.5000"
-                    android:textColor="@color/Tex"
-                     />
+                    android:textColor="@color/Tex" />
 
             </LinearLayout>
 
@@ -154,8 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Total Discount"
-                    android:textColor="@color/Tex"
-                    />
+                    android:textColor="@color/Tex" />
 
                 <TextView
                     android:id="@+id/tvTotalDiskon"
@@ -165,8 +157,7 @@
                     android:gravity="right"
                     android:maxLines="1"
                     android:text="Rp.5000"
-                    android:textColor="@color/Tex"
-                     />
+                    android:textColor="@color/Tex" />
 
             </LinearLayout>
 
@@ -179,8 +170,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Biaya Antar"
-                    android:textColor="@color/Tex"
-                     />
+                    android:textColor="@color/Tex" />
 
                 <TextView
                     android:id="@+id/tvBiayaAntar"
@@ -190,8 +180,7 @@
                     android:gravity="right"
                     android:maxLines="1"
                     android:text="Rp.5000"
-                    android:textColor="@color/Tex"
-                    />
+                    android:textColor="@color/Tex" />
 
             </LinearLayout>
 
@@ -204,8 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="PB1"
-                    android:textColor="@color/Tex"
-                     />
+                    android:textColor="@color/Tex" />
 
                 <TextView
                     android:id="@+id/tvPajakPB1"
@@ -215,8 +203,7 @@
                     android:gravity="right"
                     android:maxLines="1"
                     android:text="Rp.7000"
-                    android:textColor="@color/Tex"
-                    />
+                    android:textColor="@color/Tex" />
 
             </LinearLayout>
 
@@ -229,8 +216,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Total"
-                    android:textColor="@color/Tex"
-                    />
+                    android:textColor="@color/Tex" />
 
                 <TextView
                     android:id="@+id/tvTotal"
@@ -240,8 +226,7 @@
                     android:gravity="right"
                     android:maxLines="1"
                     android:text="Rp.7000"
-                    android:textColor="@color/Tex"
-                     />
+                    android:textColor="@color/Tex" />
 
             </LinearLayout>
 
@@ -262,17 +247,15 @@
                 android:gravity="center"
                 android:maxLines="1"
                 android:text="Customer Service"
-                android:textColor="@color/textSub"
-                 />
+                android:textColor="@color/textSub" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="Telpon : 081268475430"
-                android:textColor="@color/textSub"
-                />
+                android:text="No Hp : 082281210212"
+                android:textColor="@color/textSub" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -280,7 +263,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="FOLLOW US"
+                android:text="Our Website"
                 android:textColor="@color/textSub"
                 android:textSize="15sp" />
 
@@ -289,7 +272,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="www.topapp.id/marketresto"
+                android:text="www.vegeyuk.com"
                 android:textColor="@color/textSub"
                 android:textSize="12sp" />
 
@@ -308,12 +291,12 @@
             android:id="@+id/btnSendCode"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_below="@+id/linear2"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="20dp"
             android:text="Print"
             android:textAllCaps="false"
             android:textColor="@color/White"
-            android:layout_below="@+id/linear2"
             android:theme="@style/ButtonPrimary" />
 
     </RelativeLayout>

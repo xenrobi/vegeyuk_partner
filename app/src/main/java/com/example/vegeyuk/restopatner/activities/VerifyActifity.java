@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import com.example.vegeyuk.restopatner.activities.resto.MainActivity;
 import com.example.vegeyuk.restopatner.config.ServerConfig;
 import com.example.vegeyuk.restopatner.models.Kurir;
 import com.example.vegeyuk.restopatner.models.Restoran;
+import com.example.vegeyuk.restopatner.responses.ResponseAuth;
 import com.example.vegeyuk.restopatner.responses.ResponseValue;
 import com.example.vegeyuk.restopatner.rest.ApiService;
 import com.example.vegeyuk.restopatner.utils.SessionManager;
@@ -90,11 +92,11 @@ public class VerifyActifity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         getIncomingIntent();
-        txtResend.setText("Masukan kode verifikasi yang dikirim melalui \n SMS pada nomor ponsel +"+phone);
+        txtResend.setText("Masukan kode verifikasi yang dikirim melalui \n WA pada nomor ponsel +"+phone);
 
 
 //      Memanggil method untuk mengirim code
-        //sendVerificationCode(phone);
+//        sendVerificationCode(phone);
     }
 
 
@@ -102,16 +104,78 @@ public class VerifyActifity extends AppCompatActivity {
     @OnClick (R.id.buttonSignIn) void signin (){
         progressDialog = ProgressDialog.show(mContext,null,getString(R.string.memuat),true,false);
 //        untuk melakukan verifikasi dari code OTP yang di inputkan
-        //verifySignInCode();
+//        verifySignInCode();
 //        jika menguji login tanpa menggunakan code OTP
-         SessionUser();
+         //SessionUser();
+        verifyWA();
 
+
+    }
+
+    private void verifyWA() {
+        String code = editTextCode.getText();
+        if(kurir.getKode() != null){
+            if(kurir.getKode().equals(code)){
+                Toast.makeText(getApplicationContext(), "login successfuli", Toast.LENGTH_LONG).show();
+                SessionUser();
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Incorrect Verificarion Code", Toast.LENGTH_LONG).show();
+            }
+        }
+        else if(resto.getKode() != null) {
+            if(resto.getKode().equals(code)){
+                Toast.makeText(getApplicationContext(), "login successfuli", Toast.LENGTH_LONG).show();
+                SessionUser();
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Incorrect Verificarion Code", Toast.LENGTH_LONG).show();
+            }
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Incorrect Verificarion Code", Toast.LENGTH_LONG).show();
+        }
 
     }
 
 
     @OnClick (R.id.resendCode) void onResendCode(){
-        ResendCode(phone);
+//        ResendCode(phone);
+        progressDialog = ProgressDialog.show(mContext,null,getString(R.string.memuat),true,false);
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(coordinatorLayout.getWindowToken(), 0);
+        mApiservice.signinRequest(phone).enqueue(new Callback<ResponseAuth>() {
+
+            @Override
+            public void onResponse(Call<ResponseAuth> call, Response<ResponseAuth> response) {
+                progressDialog.dismiss();
+                if (response.isSuccessful()) {
+
+                    String value = response.body().getValue();
+                    String message = response.body().getMessage();
+                    String tipe = response.body().getTipe();
+                    if (value.equals("1")) {
+                        Intent intent = new Intent(mContext, VerifyActifity.class);
+                        if (tipe.equals("restoran")) {
+                            resto = response.body().getRestoran();
+                        } else if (tipe.equals("kurir")) {
+                            kurir = response.body().getKurir();;
+                        }
+                        Toast.makeText(mContext, "Berhasil mengirim kode ulang", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Snackbar.make(coordinatorLayout, "Gagal mengirim kode ulang", Snackbar.LENGTH_LONG).show();
+                    }
+                } else {
+                    Snackbar.make(coordinatorLayout, R.string.loss_connect, Snackbar.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseAuth> call, Throwable t) {
+                progressDialog.dismiss();
+                Snackbar.make(coordinatorLayout, R.string.loss_connect, Snackbar.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void verifySignInCode(){
@@ -149,7 +213,7 @@ public class VerifyActifity extends AppCompatActivity {
     private void sendVerificationCode(String phone){
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phone,        // Phone number to verify
+                ("+")+phone,        // Phone number to verify
                 60,                 // Timeout duration
                 TimeUnit.SECONDS,   // Unit of timeout
                 this,               // Activity (for callback binding)
@@ -193,7 +257,7 @@ public class VerifyActifity extends AppCompatActivity {
 
     public void ResendCode(String phone){
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phone,        // Phone number to verify
+                ("+")+phone,        // Phone number to verify
                 1  ,               // Timeout duration
                 TimeUnit.MINUTES,   // Unit of timeout
                 this,               // Activity (for callback binding)
@@ -240,6 +304,9 @@ public class VerifyActifity extends AppCompatActivity {
                         Toast.makeText(mContext,"Token  Resto Update Filure",Toast.LENGTH_SHORT).show();
                     }
                 }
+                else {
+                    Toast.makeText(mContext,response.message(),Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -272,7 +339,7 @@ public class VerifyActifity extends AppCompatActivity {
                         Toast.makeText(mContext,"Token  Kurir Update Filure",Toast.LENGTH_SHORT).show();
                     }
                 }else {
-                    Toast.makeText(mContext,"Terjadi Error",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext,response.message(),Toast.LENGTH_SHORT).show();
                 }
             }
 

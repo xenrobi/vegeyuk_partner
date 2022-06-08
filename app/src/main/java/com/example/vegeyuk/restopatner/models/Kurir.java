@@ -31,6 +31,9 @@ public class Kurir implements Serializable {
     @SerializedName("created_at")
     @Expose
     private Object createdAt;
+    @SerializedName("kode")
+    @Expose
+    private String kode;
 
     public Integer getId() {
         return id;
@@ -94,6 +97,14 @@ public class Kurir implements Serializable {
 
     public void setCreatedAt(Object createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getKode() {
+        return kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
     }
 
 }

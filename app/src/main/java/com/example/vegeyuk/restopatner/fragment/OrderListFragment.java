@@ -85,7 +85,7 @@ public class OrderListFragment extends Fragment {
         ArrayList<String> status = new ArrayList<String>();
         status.add("proses");
 
-        mApiService.getOrder(id_restoran, status).enqueue(new Callback<ResponseOrder>() {
+        mApiService.getOrder(id_restoran, status, null, null).enqueue(new Callback<ResponseOrder>() {
             @Override
             public void onResponse(Call<ResponseOrder> call, Response<ResponseOrder> response) {
                 orderList = response.body().getData();
@@ -140,7 +140,7 @@ public class OrderListFragment extends Fragment {
         ArrayList<String> status = new ArrayList<String>();
         status.add("proses");
 
-        mApiService.getOrder("1", status).enqueue(new Callback<ResponseOrder>() {
+        mApiService.getOrder("1", status, null, null).enqueue(new Callback<ResponseOrder>() {
             @Override
             public void onResponse(Call<ResponseOrder> call, Response<ResponseOrder> response) {
                 orderList = response.body().getData();

@@ -171,17 +171,16 @@
                 android:background="#0000"/>
 
             <TextView
-                android:layout_weight="1"
                 android:id="@+id/tvAlamatAntar"
-                android:textSize="@dimen/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#0000"
+                android:gravity="left"
                 android:text="Alamat User"
                 android:textColor="@color/Tex"
-                android:background="#0000"
 
-                android:gravity="left"
-                />
+                android:textSize="@dimen/text" />
 
         </LinearLayout>
 
@@ -445,7 +444,7 @@
                 android:textSize="@dimen/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Metode Bayar"
+                android:text="Metode Pengantaran"
                 android:textColor="@color/textSub"
                 android:background="#0000"
                 android:padding="16dp"
@@ -459,7 +458,7 @@
                 android:textSize="@dimen/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Metode Bayar"
+                android:text="Metode Antar"
                 android:textColor="@color/Tex"
                 android:background="#0000"
                 android:padding="16dp"

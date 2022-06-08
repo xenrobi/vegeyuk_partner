@@ -15,6 +15,7 @@
         android:id="@+id/topup"
         android:title=""
         android:icon="@drawable/ic_wallet"
+        android:visible="false"
         app:showAsAction="always" />
 
 

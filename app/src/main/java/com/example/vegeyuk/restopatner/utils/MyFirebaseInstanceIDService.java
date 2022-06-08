@@ -20,6 +20,7 @@ public class MyFirebaseInstanceIDService extends FirebaseMessagingService {
    public void onNewToken(String s) {
        super.onNewToken(s);
        Log.d(TAG, s);
+       storeToken(s);
    }
 
 

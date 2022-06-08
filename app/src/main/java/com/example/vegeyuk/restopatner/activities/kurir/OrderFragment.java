@@ -97,7 +97,7 @@ public class OrderFragment extends Fragment {
         String id_restoran = user.get(SessionManager.ID_RESTORAN).toString();
         ArrayList<String> status = new ArrayList<String>();
         status.add("proses");
-        mApiService.getOrder(id_restoran,status).enqueue(new Callback<ResponseOrder>() {
+        mApiService.getOrder(id_restoran,status, null, null).enqueue(new Callback<ResponseOrder>() {
             @Override
             public void onResponse(Call<ResponseOrder> call, Response<ResponseOrder> response) {
                 if (response.isSuccessful()){
@@ -145,7 +145,7 @@ public class OrderFragment extends Fragment {
         String id_restoran = user.get(SessionManager.ID_RESTORAN).toString();
         ArrayList<String> status = new ArrayList<String>();
         status.add("proses");
-        mApiService.getOrder(id_restoran,status).enqueue(new Callback<ResponseOrder>() {
+        mApiService.getOrder(id_restoran,status, null, null).enqueue(new Callback<ResponseOrder>() {
             @Override
             public void onResponse(Call<ResponseOrder> call, Response<ResponseOrder> response) {
                 orderList = response.body().getData();

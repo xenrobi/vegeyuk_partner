@@ -75,6 +75,9 @@ public class Restoran implements Serializable {
     @SerializedName("jumlah_kurir")
     @Expose
     private Integer jumlahKurir;
+    @SerializedName("kode")
+    @Expose
+    private String kode;
 
     public Integer getId() {
         return id;
@@ -258,6 +261,14 @@ public class Restoran implements Serializable {
 
     public void setRestoran_pajak_pb_satu(Integer restoran_pajak_pb_satu) {
         this.restoran_pajak_pb_satu = restoran_pajak_pb_satu;
+    }
+
+    public String getKode() {
+        return kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
     }
 }
 

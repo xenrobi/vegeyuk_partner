@@ -3,14 +3,17 @@ package com.example.vegeyuk.restopatner.fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.util.Pair;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,8 +26,11 @@ import com.example.vegeyuk.restopatner.models.Order;
 import com.example.vegeyuk.restopatner.responses.ResponseOrder;
 import com.example.vegeyuk.restopatner.rest.ApiService;
 import com.example.vegeyuk.restopatner.utils.SessionManager;
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -48,7 +54,8 @@ public class RiwayatFragment extends Fragment {
 
 
     ProgressDialog progressDialog;
-
+    String dateStringS, dateStringE;
+    EditText tanggal;
 
 
     @Nullable
@@ -65,6 +72,7 @@ public class RiwayatFragment extends Fragment {
         icon_message = (ImageView) view.findViewById(R.id.img_msg);
         title_message =  (TextView) view.findViewById(R.id.title_msg);
         sub_title_message =  (TextView) view.findViewById(R.id.sub_title_msg);
+        tanggal =  (EditText) view.findViewById(R.id.tanggal);
 
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
@@ -72,6 +80,38 @@ public class RiwayatFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        MaterialDatePicker.Builder<Pair<Long, Long>> materialDateBuilder = MaterialDatePicker.Builder.dateRangePicker();
+
+        // now define the properties of the
+        // materialDateBuilder
+        materialDateBuilder.setTitleText("Pilih Tanggal");
+
+        // now create the instance of the material date
+        // picker
+        final MaterialDatePicker materialDatePicker = materialDateBuilder.build();
+
+
+        tanggal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                materialDatePicker.show(getChildFragmentManager(), "MATERIAL_DATE_PICKER");
+            }
+        });
+
+        materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Pair<Long, Long>>() {
+            @Override public void onPositiveButtonClick(Pair<Long,Long> selection) {
+                Long startDate = selection.first;
+                Long endDate = selection.second;
+                dateStringS = DateFormat.format("yyyy-MM-dd", new Date(startDate)).toString();
+                dateStringE = DateFormat.format("yyyy-MM-dd", new Date(endDate)).toString();
+                tanggal.setText(materialDatePicker.getHeaderText());
+                progressDialog = ProgressDialog.show(mContext,null,getString(R.string.memuat),true,false);
+                setDAta();
+//                Toast.makeText(getContext(), dateStringS+" "+dateStringE, Toast.LENGTH_SHORT).show();
+                //Do something...
+            }
+        });
 
 
 
@@ -90,7 +130,7 @@ public class RiwayatFragment extends Fragment {
         status.add("selesai");
         status.add("batal");
 
-        mApiService.getOrder(id_restoran,status).enqueue(new Callback<ResponseOrder>() {
+        mApiService.getOrder(id_restoran,status, dateStringS, dateStringE).enqueue(new Callback<ResponseOrder>() {
             @Override
             public void onResponse(Call<ResponseOrder> call, Response<ResponseOrder> response) {
                 orderList = response.body().getData();

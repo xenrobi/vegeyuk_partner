@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/editTextCode"
             android:textAlignment="center"
-            android:text="Masukan kode verifikasi yang dikirim melalui SMS pada nomor ponsel +628-1268-475430"/>
+            android:text="Masukan kode verifikasi yang dikirim melalui WA pada nomor ponsel +628-1268-475430"/>
 
 
         <com.github.irvingryan.VerifyCodeView
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Sign In"
-            android:theme="@style/ButtonPrimary"
+            android:background="@color/colorPrimary"
             android:textColor="@color/White"
             android:layout_below="@id/editTextCode"/>
 
@@ -57,7 +57,7 @@
             android:layout_below="@+id/buttonSignIn"
             android:textAlignment="center"
             android:layout_marginTop="40dp"
-            android:text="Jika anda tidak menerima kode verifikasi melalui SMS klik disini untuk"/>
+            android:text="Jika anda tidak menerima kode verifikasi melalui WA klik disini untuk"/>
 
         <TextView
             android:id="@+id/resendCode"

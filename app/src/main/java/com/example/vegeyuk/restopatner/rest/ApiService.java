@@ -120,7 +120,9 @@ public interface ApiService {
     //get all order
     @GET("order")
     Call<ResponseOrder> getOrder (@Query ("id_restoran") String id_restoran,
-                                  @Query("status[]") ArrayList<String> status);
+                                  @Query("status[]") ArrayList<String> status,
+                                  @Query ("start") String start,
+                                  @Query ("end") String end);
 
     //get all order
     @GET("order/pengantaran")
@@ -237,8 +239,11 @@ public interface ApiService {
     Call<ResponseValue> changeMetodeBayar(@Path("order") String id_order);
 
 
-    @GET("restoran/{restoran}/laporan")
-    Call<ResponseLaporan> laporan(@Path("restoran") String id);
+    @FormUrlEncoded
+    @POST("restoran/{restoran}/laporan")
+    Call<ResponseLaporan> laporan(@Path("restoran") String id,
+                                  @Field ("start") String start,
+                                  @Field ("end") String end);
 
 
     //top up
